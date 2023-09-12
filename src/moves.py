@@ -61,29 +61,6 @@ class ProteinMoveGenerator:
         """
         return [(x, y) for x, y in neighbors if (x, y) not in [(info["x"], info["y"]) for info in self.amino_acid_info_list]]
 
-    def generate_moves(self, free_positions, amino_acid_id):
-        """
-        Generate move dictionaries for free positions.
-
-        Args:
-            free_positions (list): List of free positions.
-            amino_acid_id (int): ID of the amino acid for which moves are generated.
-
-        Returns:
-            list: List of move dictionaries.
-        """
-        moves = []
-
-        for i, (x, y) in enumerate(free_positions, start=1):
-            moves.append({
-                f"end_move_{i}": i,
-                "id": amino_acid_id,
-                "new_x": x,
-                "new_y": y
-            })
-
-        return moves
-
     def generate_end_moves(self):
         """
         Generate possible "end moves" for the protein conformation.
@@ -108,9 +85,23 @@ class ProteinMoveGenerator:
         free_positions_id_2 = self.find_free_positions(amino_acid_id_2_neighbors)
         free_positions_penultimate = self.find_free_positions(penultimate_amino_acid_neighbors)
 
-        # Generate moves for amino acid with ID 2 and the last amino acid in the sequence
-        possible_moves.extend(self.generate_moves(free_positions_id_2, 1))
-        possible_moves.extend(self.generate_moves(free_positions_penultimate, self.amino_acid_info_list[-1]["id"]))
+        # Generate possible end moves for the first amino acid (id=1)
+        for i, (x, y) in enumerate(free_positions_id_2, start=1):
+            possible_moves.append({
+                f"end_move_{i}": i,
+                "id": 1,
+                "new_x": x,
+                "new_y": y
+            })
+
+        # Generate possible end moves for the last amino acid
+        for i, (x, y) in enumerate(free_positions_penultimate, start=1):
+            possible_moves.append({
+                f"end_move_{i + len(free_positions_id_2)}": i + len(free_positions_id_2),
+                "id": self.amino_acid_info_list[-1]["id"],
+                "new_x": x,
+                "new_y": y
+            })
 
         # Return the list of possible end moves
         return possible_moves
