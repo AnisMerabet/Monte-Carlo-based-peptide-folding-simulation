@@ -1,5 +1,8 @@
+# Ignore files
 .idea
 .gitattributes
 .git
-src/__pycache__
-venv
+
+# Ignore folders
+src/__pycache__/
+venv/
