@@ -1,0 +1,9 @@
+name: monte_carlo
+channels:
+    - defaults
+    - bioconda
+    - conda-forge
+dependencies:
+    - biopython
+    - matplotlib
+    - tkinter
