@@ -68,7 +68,7 @@ class ProteinFolderApp:
         self.temperature_entry.place(x=495, y=95)
 
         # Create an Nb of iterations label and input box
-        iterations_label = tk.Label(self.root, text="Nb of iterations:")
+        iterations_label = tk.Label(self.root, text="Nb of MC steps:")
         iterations_label.place(x=495, y=135)
         self.iterations_entry = tk.Entry(self.root, width=16)
         self.iterations_entry.place(x=495, y=165)

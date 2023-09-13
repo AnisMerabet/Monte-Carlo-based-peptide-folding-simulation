@@ -23,7 +23,6 @@ class MCSimulation:
         make_selected_move(new_conformation, probability_move): Make or reject a selected move.
         mc_simulation(temperature, move_mode, nb_iterations): Perform Monte Carlo simulation.
     """
-
     def __init__(self, amino_acid_info_list):
         """
         Initialize the MCSimulation instance with the provided amino acid information.
@@ -118,12 +117,15 @@ class MCSimulation:
         Returns:
             float: Probability of making the move.
         """
+        # Boltzmann constant
+        K_B = 0.0019872
+
         # Check if the energy difference is non-positive (favorable move)
         if energy_difference <= 0:
             probability = 1
         else:
             # Calculate the probability based on the Metropolis criterion
-            probability = math.exp(-energy_difference / temperature)
+            probability = math.exp(-energy_difference / (temperature * K_B))
         return probability
 
     def make_selected_move(self, new_conformation, probability_move):

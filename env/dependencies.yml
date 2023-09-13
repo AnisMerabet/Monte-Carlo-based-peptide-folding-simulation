@@ -1,0 +1,9 @@
+name: monte_carlo_based_simulation
+channels:
+    - defaults
+    - bioconda
+    - conda-forge
+dependencies:
+    - biopython
+    - matplotlib
+    - tkinter
