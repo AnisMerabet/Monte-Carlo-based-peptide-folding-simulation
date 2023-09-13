@@ -1,8 +1,8 @@
 # Monte Carlo based 2D protein folding simulation
 
-Prot Fold is a tool used to perform Monte Carlo simulation on 2D hydrophylic-hydrophobic (HP) model. It implmeents pull moves and VSHD moves that encompass end moves, corner moves and crankshaft moves. It seeks to find the optimal conformation of the protein with the smallest possible energy.
+Prot Fold is a tool used to perform Monte Carlo simulation on 2D hydrophylic-hydrophobic (HP) model. It implements pull moves and VSHD moves that encompass end moves, corner moves and crankshaft moves. It seeks to find the optimal conformation of the protein with the smallest possible energy.
 
-This program was done for a university project, based on the following paper :
+This project was done for a university project, based on the following paper :
 
 > [Reference](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-8-342#ref-CR50) :
 C. Thachuk, A. Shmygelska, and H. H. Hoos, “A replica exchange Monte Carlo algorithm for protein folding in the HP model,” BMC Bioinformatics, vol. 8, no. 1, p. 342, Sep. 2007, doi: 10.1186/1471-2105-8-342.
@@ -56,7 +56,7 @@ Clic the button `Start` to run the simulation. Once finished. The energy of the 
 
 ## Example usage
 
-In this example, the file `S1-8.fasta` located in `data` directory was loaded to the application
+In this example, the file `S1-8.fasta` located in `data` directory was loaded to the application.
 
 ![Illustration](doc/figures/illustration2.png)
 
@@ -65,8 +65,8 @@ The temperature was set to 200, the number of Monte Carlo steps was set to 50000
 
 ![Illustration](doc/figures/illustration3.png)
 
-The new energy of the conformation is -30 and the calculation time was 147.77 seconds
-By pushing the button `Energy history`, the evolution of energy according to Monte Carlo steps is displayed
+The new energy of the conformation is -30 and the calculation time was 147.77 seconds.
+By pushing the button `Energy history`, the evolution of energy according to Monte Carlo steps is displayed.
 
 ![Illustration](doc/figures/illustration4.png)
 
