@@ -49,7 +49,7 @@ Here is an example:
 ARINLDMEQFHVKPSW
 ```
 
-One the fasta file is loaded, the protein sequence is processed to translate it according to HP model before being displayed in a randomly set conformation. Hydrophobic amino acids (A, I, L, M, F, V, P, G, W and C) will be displayed with red circles whereas hydrophilic amino acids (R, N, D, E, Q, H, K, S, and Y) will be displayed in blue circles.
+Once the fasta file is loaded, the protein sequence is processed to translate it according to HP model before being displayed in a randomly set conformation. Hydrophobic amino acids (A, I, L, M, F, V, P, G, W and C) will be displayed with red circles whereas hydrophilic amino acids (R, N, D, E, Q, H, K, S, and Y) will be displayed in blue circles.
 A black lines  every two amino acid in the peptide sequence and pink lines connect represent hydrophobic interation between two hydrophobic amino acids. The number of these interactions defines the current energy of the conformation which is displayed in Stats section automatically after loading the file
 The user should define the temperature which should be a positive float and sets the number of Monte Carlo steps for the simulation. Two possible moves modes are available, pull moves which is defined by default and VSHD moves.
 Clic the button `Start` to run the simulation. Once finished. The energy of the new conformation and calculation time are displayed in the Stats section. The button `Energy history` allow to display a graph in a new window showing the evolution energy according to Monte Carlo steps.
